@@ -24,7 +24,7 @@ const LoginForm = ({
       <div className="flex items-center gap-4 bg-gray-100 p-2 rounded">
         <img className="w-5" src={emailIcon} alt="mail icon" />
         <input
-          className="text-[14px] focus:outline-none"
+          className="text-[14px] focus:outline-none w-full"
           onChange={handleChange}
           name="email"
           type="email"
@@ -32,11 +32,11 @@ const LoginForm = ({
           value={formData.email}
         />
       </div>
-      <div className="flex justify-between items-center  bg-gray-100 p-2 rounded">
-        <div className="flex items-center gap-4 ">
+      <div className="flex justify-between items-center bg-gray-100 p-2 rounded">
+        <div className="flex items-center gap-4 w-full">
           <img className="w-5 " src={lockIcon} alt="lock icon" />
           <input
-            className="text-[14px] focus:outline-none"
+            className="text-[14px] focus:outline-none w-full"
             onChange={handleChange}
             name="password"
             type={passwordVisible ? "text" : "password"}
@@ -57,7 +57,7 @@ const LoginForm = ({
             type="checkbox"
             checked={rememberMe}
             onChange={handleRememberMeChange}
-            className="mr-2 cursor-pointer"
+            className="mr-2 cursor-pointer "
           />
           Remember Me
         </label>

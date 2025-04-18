@@ -76,8 +76,8 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="bg-sky-100 w-screen h-screen flex justify-center items-center ">
-      <div className="  bg-white p-10 md:w-[400px] rounded-xl shadow-2xl">
+    <div className="bg-sky-100 p-10 w-screen h-screen  flex justify-center items-center ">
+      <div className="  bg-white p-10 w-full  sm:w-[450px]  rounded-xl shadow-2xl">
         <h1 className="flex justify-center items-center text-xl font-light">
           Log into your account
         </h1>

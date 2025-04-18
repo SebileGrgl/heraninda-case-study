@@ -23,7 +23,7 @@ const SignupForm = ({
       <div className="flex items-center gap-4 bg-gray-100 p-2 rounded">
         <img src={profileIcon} alt="person-icon" className="w-5" />
         <input
-          className="text-[14px] focus:outline-none"
+          className="text-[14px] focus:outline-none w-full"
           type="text"
           placeholder="Full Name"
           name="fullName"
@@ -34,7 +34,7 @@ const SignupForm = ({
       <div className="flex items-center gap-4 bg-gray-100 p-2 rounded">
         <img src={emailIcon} alt="mail-icon" className="w-5" />
         <input
-          className="text-[14px] focus:outline-none"
+          className="text-[14px] focus:outline-none w-full"
           type="email"
           placeholder="Email"
           name="email"
@@ -43,10 +43,10 @@ const SignupForm = ({
         />
       </div>
       <div className="flex justify-between items-center  bg-gray-100 p-2 rounded">
-        <div className="flex items-center gap-4 ">
+        <div className="flex items-center gap-4 w-full">
           <img className="w-5 " src={lockIcon} alt="lock icon" />
           <input
-            className="text-[14px] focus:outline-none"
+            className="text-[14px] focus:outline-none w-full"
             onChange={handleChange}
             name="password"
             type={passwordVisible ? "text" : "password"}
@@ -64,7 +64,7 @@ const SignupForm = ({
       <div className="flex items-center gap-4 bg-gray-100 p-2 rounded">
         <img className="w-5 " src={lockIcon} alt="lock icon" />
         <input
-          className="text-[14px] focus:outline-none"
+          className="text-[14px] focus:outline-none w-full"
           onChange={handleChange}
           name="confirmPassword"
           type={passwordVisible ? "text" : "password"}
