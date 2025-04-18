@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import PostDetails from "./pages/PostDetails";
 import CreatePost from "./pages/CreatePost";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -17,14 +16,7 @@ const App = () => {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/post/:id"
-        element={
-          <ProtectedRoute>
-            <PostDetails />
-          </ProtectedRoute>
-        }
-      />
+
       <Route
         path="/create-post"
         element={

@@ -1,5 +1,11 @@
+import BlogList from "../components/BlogList";
+
 const HomePage = () => {
-  return <div>Home Page</div>;
+  return (
+    <div>
+      <BlogList />
+    </div>
+  );
 };
 
 export default HomePage;

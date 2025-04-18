@@ -33,3 +33,14 @@ export type SignupFormProps = {
   signupUser: (e: React.FormEvent<HTMLFormElement>) => void;
   formData: SignupData;
 };
+
+export type BlogPost = {
+  id: number;
+  title: string;
+  description?: string;
+  url: string;
+  coverImage: string;
+  createdAt: string;
+  createdBy: string;
+  readingTime: number;
+};
