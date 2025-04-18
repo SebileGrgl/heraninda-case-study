@@ -1,5 +1,5 @@
 export type User = {
-  name: string;
+  fullName: string;
   email: string;
   password: string;
 };
@@ -15,10 +15,21 @@ export type LoginData = {
   password: string;
 };
 
+export type SignupData = User & {
+  fullName: string;
+  confirmPassword: string;
+};
+
 export type LoginFormProps = {
   handleUserLogin: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleRememberMeChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   rememberMe: boolean;
   formData: LoginData;
+};
+
+export type SignupFormProps = {
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  signupUser: (e: React.FormEvent<HTMLFormElement>) => void;
+  formData: SignupData;
 };

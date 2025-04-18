@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const mockUser: User = {
-  name: "Max Verstappen",
+  fullName: "Max Verstappen",
   email: "max@gmail.com",
   password: "max1234",
 };
@@ -52,9 +52,13 @@ const LoginPage = () => {
     e.preventDefault();
     const { email, password } = formData;
     if (email && password) {
-      const isDataMatched =
-        mockUser.email === email && mockUser.password === password;
-      if (isDataMatched) {
+      const userList = localStorage.getItem("userList");
+      const userListData = userList ? JSON.parse(userList) : [];
+      const matchedUser = userListData.find(
+        (user: User) => user.email === email
+      );
+
+      if (matchedUser) {
         login(mockUser);
         navigate("/");
         toast.success("Successfully logged in!");
