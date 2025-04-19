@@ -1,1 +1,0 @@
-# heraninda-case-study
