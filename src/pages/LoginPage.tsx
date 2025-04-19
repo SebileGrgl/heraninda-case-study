@@ -6,14 +6,8 @@ import { LoginData, User } from "../types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const mockUser: User = {
-  fullName: "Max Verstappen",
-  email: "max@gmail.com",
-  password: "max1234",
-};
-
 const LoginPage = () => {
-  const { user, login } = useAuth();
+  const { user, login, logout } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState<LoginData>({
     email: "",
@@ -32,8 +26,6 @@ const LoginPage = () => {
         }));
         setRememberMe(true);
       }
-    } else {
-      navigate("/");
     }
   }, [user]);
 
@@ -59,7 +51,7 @@ const LoginPage = () => {
       );
 
       if (matchedUser) {
-        login(mockUser);
+        login(matchedUser);
         navigate("/");
         toast.success("Successfully logged in!");
         if (rememberMe) {
@@ -75,21 +67,39 @@ const LoginPage = () => {
     }
   }
 
+  const LoggedInUserScreen = (
+    <div className="bg-white p-10 w-full  sm:w-[450px]  rounded-xl shadow-2xl ">
+      <h1 className="flex flex-col justify-center items-center gap-1 font-light text-2xl ">
+        <span>Welcome Again</span> <span>{user?.fullName}</span>
+      </h1>
+      <button
+        className="bg-amber-300 rounded-xl py-[6px] text-[14px] mt-6  cursor-pointer active:bg-amber-400 w-full"
+        onClick={logout}
+      >
+        Logout
+      </button>
+    </div>
+  );
+
   return (
     <div className="bg-sky-100 p-10 w-screen h-screen  flex justify-center items-center ">
-      <div className="  bg-white p-10 w-full  sm:w-[450px]  rounded-xl shadow-2xl">
-        <h1 className="flex justify-center items-center text-xl font-light">
-          Log into your account
-        </h1>
+      {user ? (
+        LoggedInUserScreen
+      ) : (
+        <div className="  bg-white p-10 w-full  sm:w-[450px]  rounded-xl shadow-2xl">
+          <h1 className="flex justify-center items-center text-xl font-light">
+            Log into your account
+          </h1>
 
-        <LoginForm
-          handleUserLogin={handleUserLogin}
-          handleChange={handleChange}
-          handleRememberMeChange={handleRememberMeChange}
-          rememberMe={rememberMe}
-          formData={formData}
-        />
-      </div>
+          <LoginForm
+            handleUserLogin={handleUserLogin}
+            handleChange={handleChange}
+            handleRememberMeChange={handleRememberMeChange}
+            rememberMe={rememberMe}
+            formData={formData}
+          />
+        </div>
+      )}
       <ToastContainer />
     </div>
   );
