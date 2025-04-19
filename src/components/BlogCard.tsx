@@ -33,7 +33,7 @@ const BlogCard = ({ post }: { post: BlogPost }) => {
         </div>
       </div>
       <Link
-        className="group-hover:opacity-100 opacity-0 transition-opacity duration-300 bg-amber-300  absolute bottom-0 w-full p-2 flex justify-center items-center text-sm rounded-b-md"
+        className="group-hover:opacity-100 opacity-0 transition-opacity duration-300 bg-amber-300 hover:bg-amber-400 absolute bottom-0 w-full p-2 flex justify-center items-center text-sm rounded-b-md"
         to={post.url}
       >
         Read More
