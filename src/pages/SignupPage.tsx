@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SignupData } from "../types";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import SignupForm from "../components/SignupForm";
 
 const SignupPage = () => {
@@ -88,7 +88,6 @@ const SignupPage = () => {
           formData={formData}
         />
       </div>
-      <ToastContainer />
     </div>
   );
 };

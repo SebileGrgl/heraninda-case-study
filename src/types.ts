@@ -44,3 +44,11 @@ export type BlogPost = {
   createdBy: string;
   readingTime: number;
 };
+
+export type PostFormProps = {
+  formData: BlogPost;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+};
