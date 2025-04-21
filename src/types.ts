@@ -8,6 +8,7 @@ export type AuthContextType = {
   user: User | null;
   login: (userData: User) => void;
   logout: () => void;
+  isAuthLoading: boolean;
 };
 
 export type LoginData = {
@@ -51,4 +52,8 @@ export type PostFormProps = {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+};
+
+export type BlogListProps = {
+  posts: BlogPost[];
 };
